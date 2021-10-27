@@ -23,18 +23,22 @@ addpath(genpath('/Applications/Canlab/ROI_masks_and_parcellations')); % copied f
 addpath(genpath('/Applications/Canlab/2017_kragel_mfc_generalizability_natneurosci/')); 
 addpath(genpath('/Applications/Canlab/RobustToolbox/'));
 addpath(genpath('/Applications/aal')); 
-
-%% also add 
 addpath(genpath('/Applications/Canlab/CanlabPrivate/'));
+
+% Lukas 
 addpath(genpath('/Applications/Canlab/proj-emosymp/'));
 
+%% also add 
+% add Wani's core repo
+addpath(genpath('/Applications/Canlab/cocoanCORE/'));
+% Wani's BIDS and preprocessing pipeline
+addpath(genpath('/Applications/Canlab/humanfmri_preproc_bids/'));
+
+% I need wanii's version of dicm2nii:
+which dicm2nii
 
 %% add anne urai's plotting tools
 addpath(genpath('/Applications/Canlab/Tools'));
-
-% add wani's plots (TOPS paper)
-addpath (genpath('/Users/marta/Dropbox (Cognitive and Affective Neuroscience Laboratory)/B_AVERSIVE/Analysis/MPA2_EXP/scripts/tops_figure_2_ex'));
-
 
 % add wani's repo
 addpath(genpath('/Applications/Canlab/cocoanCORE'));
@@ -43,7 +47,7 @@ addpath(genpath('/Applications/Canlab/cocoanCORE'));
 masksdir = fullfile(basedir, 'masks');
 addpath (genpath(masksdir))
 which ('gm_mask.nii');
-which ('AllRegions.nii');
+
 
 %% add modified scripts
 % 

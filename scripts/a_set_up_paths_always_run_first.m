@@ -8,29 +8,21 @@
 
 basedir = '/Volumes/GoogleDrive/My Drive/B_FENIX/Analysis'
 
-
-cd(basedir)
-
-% datadir = fullfile(basedir, 'data');
+% Scripts are in this github-connected dir: 
+scriptsdir = '/Applications/CODE/FENIX/scripts';
 
 datadir = 'Volumes/GoogleDrive/My Drive/B_FENIX/Data'
 
 resultsdir = fullfile(basedir, 'results');
-scriptsdir = fullfile(basedir, 'scripts');
 figsavedir = fullfile(resultsdir, 'figures');
-
 roidir = fullfile(basedir, 'rois');
 
 if ~exist(resultsdir, 'dir'), mkdir(resultsdir); end
-if ~exist(scriptsdir, 'dir'), mkdir(scriptsdir); end
 if ~exist(figsavedir, 'dir'), mkdir(figsavedir); end
 if ~exist(roidir, 'dir'), mkdir(roidir); end
 
-addpath(scriptsdir)
-
-% You may need this, but now should be in CANlab Private repository
-% g = genpath('/Users/tor/Documents/matlab_code_external/spider');
-% addpath(g)
+addpath(scriptsdir);
+cd(scriptsdir); 
 
 % Display helper functions: Called by later scripts
 
