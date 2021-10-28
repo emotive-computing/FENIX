@@ -22,7 +22,7 @@ data and results are in Google Drive, currently available to those with Edit per
 
 Supplement: TBD
 
-### Overview of scripts used in each step
+### Overview of scripts
 
 (1) BIDS formatting: fenixfmri_bids.m 
 - Cocoan's lab 'humanfmri' scripts adapted to run on FENIX fmri data 
