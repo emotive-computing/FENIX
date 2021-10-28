@@ -27,7 +27,7 @@ Supplement: TBD
 (1) BIDS formatting: fenixfmri_bids.m 
 - Cocoan's lab 'humanfmri' scripts adapted to run on FENIX fmri data 
   - can probably be (easily?) adapted for FNIRS data
-  - alternatively, could try these: https://github.com/rob-luke/BIDS-NIRS-Tapping
+  - alternatively, could try this: https://github.com/rob-luke/BIDS-NIRS-Tapping
  
 (2) Preprocessing: fenixfmri_fmriprep.m
 - Cocoan's lab 'humanfmri' scripts adapted to run on FENIX fmri data 
