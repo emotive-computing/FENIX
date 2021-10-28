@@ -22,8 +22,14 @@ data and results are in Google Drive, currently available to those with Edit per
 
 Supplement: TBD
 
-## Analyses in progress 
+### Overview of scripts used in each step
 
-(1) First level on n = 10 subjects x 4 tasks (finger tap, stroop, reading with affect, pain with regulation) 
+(1) BIDS formatting: fenixfmri_bids.m 
+- Cocoan's lab 'humanfmri' scripts adapted to run on FENIX fmri data 
+ 
+(2) Preprocessing: fenixfmri_fmriprep.m
+- Cocoan's lab 'humanfmri' scripts adapted to run on FENIX fmri data 
+
+(3) First level on n = 10 subjects x 4 tasks (finger tap, stroop, reading with affect, pain with regulation) 
 
 
