@@ -71,7 +71,6 @@ for sub_i = 1:numel(subject_codes)
     raw_dir = fullfile(study_imaging_dir, 'raw', subject_codes{1,sub_i});
 
     dicom_dir = filenames(fullfile(study_imaging_dir, 'fenix_200124'), 'char');
-%  
     sub_dicom_dir = filenames(fullfile(dicom_dir, subject_codes{1,sub_i}, ['Study*']), 'char');
     
     % anat

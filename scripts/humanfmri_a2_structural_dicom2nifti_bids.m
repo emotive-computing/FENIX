@@ -78,17 +78,17 @@ for subj_i = 1:numel(subject_codes)
     end
     
     dicom_imgs = filenames(fullfile(datdir, dicom_pattern)); % depth 1
-%     if isempty(dicom_imgs) || sum(contains(dicom_imgs, 'no matches found'))==1, dicom_imgs = filenames(fullfile(datdir, '*/SerieMR*')); end % depth 2
-%     if isempty(dicom_imgs) || sum(contains(dicom_imgs, 'no matches found'))==1, dicom_imgs = filenames(fullfile(datdir, '*/*/SerieMR*')); end % depth 3
-%     if isempty(dicom_imgs) || sum(contains(dicom_imgs, 'no matches found'))==1, error('Can''t find dicom files. Please check.'); end
-%     
+    if isempty(dicom_imgs) || sum(contains(dicom_imgs, 'no matches found'))==1, dicom_imgs = filenames(fullfile(datdir, '*/SerieMR*')); end % depth 2
+    if isempty(dicom_imgs) || sum(contains(dicom_imgs, 'no matches found'))==1, dicom_imgs = filenames(fullfile(datdir, '*/*/SerieMR*')); end % depth 3
+    if isempty(dicom_imgs) || sum(contains(dicom_imgs, 'no matches found'))==1, error('Can''t find dicom files. Please check.'); end
+    
     dicm2nii(dicom_imgs, outdir, 4, 'save_json');
     out = load(fullfile(outdir, 'dcmHeaders.mat'));
     f = fields(out.h);
     
     info.source = f{1};
     [~, subj_id] = fileparts(PREPROC.subject_dir);
-    info.target = [subj_id '_t1w'];
+    info.target = [subj_id '_T1w'];
     
     filetype = {'nii', 'json'};
     
@@ -97,20 +97,16 @@ for subj_i = 1:numel(subject_codes)
         target_file = fullfile(outdir, [info.target '.' filetype{i}]);
         
        % Marta: why not just use movefile here? 
-        %system(['mv ' source_file ' ' target_file]);
-        movefile (source_file,target_file)
+        system(['mv ' source_file ' ' target_file]);
+        % movefile (source_file,target_file)
         
         eval(['PREPROC.anat_' filetype{i} '_files = {''' target_file '''};']);
     end
     
     eval(['h = out.h.' info.source ';']);
     save(fullfile(outdir, 'anat_dcm_headers.mat'), 'h');
-    
-%     % Marta: my paths have spaces in them (Googledrive > My Drive) so I
-%     % will try to stay away from 'system' commands 
-%     % system(['rm ' fullfile(outdir, 'dcmHeaders.mat')]);
-%     
-    delete(fullfile(outdir, 'dcmHeaders.mat'))
+
+    system(['rm ' fullfile(outdir, 'dcmHeaders.mat')]);
 %     
     save_load_PREPROC(PREPROC.subject_dir, 'save', PREPROC); % save PREPROC
 end

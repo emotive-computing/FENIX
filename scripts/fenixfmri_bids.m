@@ -12,7 +12,7 @@ func_tasks = {'rest', 'fingertap', 'stroop', 'reading', 'painreg'};
 disdaq_n = repmat(18, 1, run_n); %(number of TR, 1, number of run);
 
 % (2) Name directory and subject code
-study_imaging_dir = '/Volumes/GoogleDrive/My Drive/B_FENIX/Data/FMRI/Imaging/';
+study_imaging_dir ='/Users/marta/Documents/DATA/FENIX/Imaging'
 subj_idx = 101:110; %[10, 24, 27:31]; % [1:34, 43:54] or [2,3,4, 5, 21];
 projName = 'F'; % project name
 [preproc_subject_dir, subject_code] = make_subject_dir_code(study_imaging_dir, projName,subj_idx);
@@ -21,18 +21,21 @@ num_sub = length(subject_code);
 
 %% A. BIDS dicom to nifti =================================================
 % PART A: --------------------
-% 1. dicom to nifti: bids
-% 2. bids validation
+% 1. directories
+% 2. dicom to nifti: bids
+% 3. bids validation
 % ----------------------------
 
-%% A-1. Make directories
+%% A-1. Make & move directories
+
+% Make 
 for i=1:num_sub
     humanfmri_a1_make_directories(subject_code{1,i}, study_imaging_dir, func_run_nums, func_tasks);
 end
 
-%% Move Directories
+% Move
 cd(scriptsdir)
-for i = 1:num_sub
+for i = 2:num_sub
     move_dicom_to_raw(subject_code{1,i}, study_imaging_dir, run_n);
     cd(scriptsdir)
 end
@@ -42,33 +45,59 @@ end
 % IMPORTANT: using cocoan's lab version of dicm2nii! 
 % which dicm2nii should be: /Applications/Canlab/humanfmri_preproc_bids/external/dicm2nii/dicm2nii.m
 
+% NOTE: You can combine A-2.1-3 into one loop, I split it because I was debugging 
+% -------------------------------------------------------------------------------------------------------
+
+% A-2.1. Dicom to nifti: anat(T1)
+% -----------------------------------------------------
 d=datetime('now');
 cd(scriptsdir)
 
-% this seems to be taking too long: 300 sec per subject! 
-for i=8
-    % A-2. Dicom to nifti: anat(T1)
+% ~ 6 seconds per subject
+for i=1:num_sub
     humanfmri_a2_structural_dicom2nifti_bids(subject_code{1,i}, study_imaging_dir);
-
+    cd(scriptsdir)
 end
 
-%% 
+% A-2.2. Dicom to nifti: functionals
+% -----------------------------------------------------
 d=datetime('now');
 cd(scriptsdir)
+
 for i = 1:num_sub
-    % A-3. Dicom to nifti: functional(Run 1-5)
-    
     %humanfmri_a3_functional_dicom2nifti_bids(subject_code, study_imaging_dir, disdaq_n);
     humanfmri_a3_functional_dicom2nifti_bids(subject_code{1,i}, study_imaging_dir, disdaq_n, 'no_check_disdaq');
-    
-    % A-4. Dicom to nifti: fmap(Distortion correction)
-    
+    cd(scriptsdir)
+end  
+% FAILED FOR F105 painreg - 2 runs instead of one (restarted task), did not copy properly to 'raw';
+% SOLVED: re-copied correct file (1402 dicoms) _ SBref into 'dicoms',re-ran dicom 2 nifti
+
+% A-2.3. Dicom to nifti: fmap(Distortion correction)
+% -----------------------------------------------------
+d=datetime('now');
+cd(scriptsdir);
+
+for i = 2:num_sub  
     %humanfmri_a4_fieldmap_dicom2nifti_bids(subject_code, study_imaging_dir);
     humanfmri_a4_fieldmap_dicom2nifti_bids(subject_code{1,i}, study_imaging_dir);
     
     d=[d datetime('now')];
+    
+    cd(scriptsdir)
 end
 
+% FILE SIZES: 
+% rest          - 652
+% fingertap     - 326
+% stroop        - 588
+% reading       - 1292
+% painreg       - 1402
 
+% F101 has mismatched durations of rest (782) and reading (1286)
+% F102 has mismatched duration of reading (1280)
 
-
+% A-3 BIDS-validator
+% -----------------------------------------------------
+% http://incf.github.io/bids-validator/ in chrome
+% ---> naming structure for anat/,  func/ is correct
+% ---> some errors becuase I have more subfolders than BIDS expects (e.g., dicoms) 

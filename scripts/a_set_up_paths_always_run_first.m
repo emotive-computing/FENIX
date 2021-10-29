@@ -11,11 +11,12 @@ basedir = '/Volumes/GoogleDrive/My Drive/B_FENIX/Analysis'
 % Scripts are in this github-connected dir: 
 scriptsdir = '/Applications/CODE/FENIX/scripts';
 
-datadir = 'Volumes/GoogleDrive/My Drive/B_FENIX/Data'
+datadir = '/Users/marta/Documents/DATA/FENIX/Imaging/';
 
 resultsdir = fullfile(basedir, 'results');
 figsavedir = fullfile(resultsdir, 'figures');
 roidir = fullfile(basedir, 'rois');
+maskdir = fullfile(basedir, 'masks');
 
 if ~exist(resultsdir, 'dir'), mkdir(resultsdir); end
 if ~exist(figsavedir, 'dir'), mkdir(figsavedir); end

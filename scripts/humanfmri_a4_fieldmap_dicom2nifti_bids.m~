@@ -73,13 +73,14 @@ for subj_i = 1:numel(subject_codes)
     dicom_imgs_pa = dicom_imgs(contains(dicom_imgs, 'polarity_invert_to_pa'));
     
     % Examples: 
-%     dicom_imgs_ap =
-%     {'/Users/marta/Documents/DATA/FENIX/Imaging/raw/sub-F101/dicom/fmap/fenix_distortion_corr_32ch_ap_0007/SerieMR-0007-0001-1.dcm'}
-%     {'/Users/marta/Documents/DATA/FENIX/Imaging/raw/sub-F101/dicom/fmap/fenix_distortion_corr_32ch_ap_0007/SerieMR-0007-0002-1.dcm'}
-%     
-%     dicom_imgs_pa =
-%     {'/Users/marta/Documents/DATA/FENIX/Imaging/raw/sub-F101/dicom/fmap/fenix_distortion_corr_32ch_ap_polarity_invert_to_pa_0008/SerieMR-0008-0001-1.dcm'}
-%     {'/Users/marta/Documents/DATA/FENIX/Imaging/raw/sub-F101/dicom/fmap/fenix_distortion_corr_32ch_ap_polarity_invert_to_pa_0008/SerieMR-0008-0002-1.dcm'}
+    dicom_imgs_ap =
+
+    {'/Users/marta/Documents/DATA/FENIX/Imaging/raw/sub-F101/dicom/fmap/fenix_distortion_corr_32ch_ap_0007/SerieMR-0007-0001-1.dcm'}
+    {'/Users/marta/Documents/DATA/FENIX/Imaging/raw/sub-F101/dicom/fmap/fenix_distortion_corr_32ch_ap_0007/SerieMR-0007-0002-1.dcm'}
+dicom_imgs_pa =
+    {'/Users/marta/Documents/DATA/FENIX/Imaging/raw/sub-F101/dicom/fmap/fenix_distortion_corr_32ch_ap_polarity_invert_to_pa_0008/SerieMR-0008-0001-1.dcm'}
+    {'/Users/marta/Documents/DATA/FENIX/Imaging/raw/sub-F101/dicom/fmap/fenix_distortion_corr_32ch_ap_polarity_invert_to_pa_0008/SerieMR-0008-0002-1.dcm'}
+
 
     
     %% PA
