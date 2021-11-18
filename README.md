@@ -42,7 +42,7 @@ Supplement: TBD
 
 (3) GLM: Second level (= group-level) 
 
-- prep_1_[taskname]_set_conditions_contrasts_colors
-- prep_2, prep_3, c_univariate_contrast_maps
+- prep_1_[taskname]_set_conditions_contrasts_colors.m
+- then run prep_2_, prep_3_, c_univariate_contrast_maps (canlab core scripts) 
 
 
