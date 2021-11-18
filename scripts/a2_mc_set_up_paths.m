@@ -79,6 +79,8 @@ end
 fprintf ('To confirm, which spm am I running? \n');
 which spm
 
+%% add TPM map for normalization 
+addpath /Applications/spm12/tpm/    
 
 %% check that jsondecode is on path (MATLAB 2016B and later) 
 which jsondecode

@@ -1,4 +1,5 @@
-% BIDSing and preprocessing based on Wani's code
+% BIDS formatting based on Cocoan's code
+% https://github.com/cocoanlab/humanfmri_preproc_bids
 
 cd(scriptsdir)
 
@@ -8,8 +9,9 @@ func_run_nums = [1 2 3 4 5];
 run_n = length(func_run_nums);
 func_tasks = {'rest', 'fingertap', 'stroop', 'reading', 'painreg'};
 
-% for now, set to discard 18 volumes, but check before discarding
-disdaq_n = repmat(18, 1, run_n); %(number of TR, 1, number of run);
+% for now, set to discard 18 volumes, but check before actually discarding
+% (in fenixfmri_fmriprep)
+disdaq_n = 0; %repmat(18, 1, run_n); %(number of TR, 1, number of run);
 
 % (2) Name directory and subject code
 study_imaging_dir ='/Users/marta/Documents/DATA/FENIX/Imaging'
@@ -61,9 +63,15 @@ end
 
 % A-2.2. Dicom to nifti: functionals
 % -----------------------------------------------------
+
+% Note: this step will save 2 files: 
+% one is the trimmed functional (removing disdaq volumes)
+% the other one is disdaq volumes only; saved in the disdaq_dcmheaders dir) 
+
 d=datetime('now');
 cd(scriptsdir)
 
+% takes ~10 min per subject
 for i = 1:num_sub
     %humanfmri_a3_functional_dicom2nifti_bids(subject_code, study_imaging_dir, disdaq_n);
     humanfmri_a3_functional_dicom2nifti_bids(subject_code{1,i}, study_imaging_dir, disdaq_n, 'no_check_disdaq');
@@ -77,16 +85,13 @@ end
 d=datetime('now');
 cd(scriptsdir);
 
-for i = 2:num_sub  
+for i = 1:num_sub  
     %humanfmri_a4_fieldmap_dicom2nifti_bids(subject_code, study_imaging_dir);
-    humanfmri_a4_fieldmap_dicom2nifti_bids(subject_code{1,i}, study_imaging_dir);
-    
-    d=[d datetime('now')];
-    
+    humanfmri_a4_fieldmap_dicom2nifti_bids(subject_code, study_imaging_dir);
     cd(scriptsdir)
 end
 
-% FILE SIZES: 
+% ORIGINAL FILE SIZES (BEFORE DISDAQ):  
 % rest          - 652
 % fingertap     - 326
 % stroop        - 588
