@@ -32,6 +32,17 @@ Supplement: TBD
 (2) Preprocessing: fenixfmri_fmriprep.m
 - Cocoan's lab 'humanfmri' scripts adapted to run on FENIX fmri data 
 
-(3) First level on n = 10 subjects x 4 tasks (finger tap, stroop, reading with affect, pain with regulation) 
+(3) GLM: First level (= subject-level) 
+
+- n = 10 subjects x 4 tasks (finger tap, stroop, reading with affect, pain with regulation) 
+
+- spm_get_firstlvl_dsgn_obj_[taskname].m
+- spm_prep_firstlvl_models_[taskname].m
+- spm_fit_firstlvl_models_[taskname].m
+
+(3) GLM: Second level (= group-level) 
+
+- prep_1_[taskname]_set_conditions_contrasts_colors
+- prep_2, prep_3, c_univariate_contrast_maps
 
 
