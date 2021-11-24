@@ -5,6 +5,7 @@
 This repository contains FMRI analysis code related to the FENIX project 
 
 code runs ok on MATLAB 2019b
+
 code requires CANLAB core tools and a few other tools, all loaded using a2_mc_set_up_paths.m
 
 ### Data 
