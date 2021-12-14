@@ -4,10 +4,16 @@
 
 This repository contains FMRI, FNIRS and EEG code related to preprocessing and analysis of FENIX project data
 
-## FMRI
+#### FMRI
 - code runs ok on MATLAB 2019b
 
 - code requires CANLAB core tools (https://github.com/canlab) and a few other tools, all loaded using a2_mc_set_up_paths.m
+
+#### FNIRS 
+- add requirements 
+
+#### EEG
+- add requirements 
 
 ### Documents 
 
