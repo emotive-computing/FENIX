@@ -100,6 +100,7 @@ end
 
 % F101 has mismatched durations of rest (782) and reading (1286)
 % F102 has mismatched duration of reading (1280)
+% F109 has mismatched duration of reading (1250)
 
 % A-3 BIDS-validator
 % -----------------------------------------------------

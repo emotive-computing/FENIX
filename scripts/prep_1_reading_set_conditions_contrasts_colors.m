@@ -12,18 +12,18 @@ DAT = struct();
 
 % Names of subfolders in /data
 
-DAT.subfolders =    {'firstlvl/stroop/sub*' 'firstlvl/stroop/sub*'};
+DAT.subfolders =    {'firstlvl/reading/sub*' 'firstlvl/reading/sub*' 'firstlvl/reading/sub*'};
                                                
 % Names of conditions (see end of file for list of conditions as specified
 % in 1st level DSGN.mat file
 
-DAT.conditions = {'congruent','incongruent'};
+DAT.conditions = {'reading1','reading2','video_affect'};
 
 DAT.conditions = format_strings_for_legend(DAT.conditions);
 
 DAT.structural_wildcard = {};
 
-DAT.functional_wildcard =  {'beta_0001.nii' 'beta_0002.nii'}; 
+DAT.functional_wildcard =  {'beta_0001.nii' 'beta_0002.nii' 'beta_0003.nii'}; 
 
 
 %% Set Contrasts
@@ -53,17 +53,14 @@ DAT.functional_wildcard =  {'beta_0001.nii' 'beta_0002.nii'};
 % These will be used in c2c_SVM_between_condition_contrasts.
 
 % Vectors across conditions
-DAT.contrasts = [1 1 1 1 1 1;
-                 -1 1 -1 1 -1 1;
-                 1 1 -1 -1 0 0;
-                 0 0 -1 -1 1 1;
-                 1 1 0 0 -1 -1;
-                 1 1 0 0 0 0;
-                 0 0 1 1 0 0;
-                 0 0 0 0 1 1]; 
-
-DAT.contrastnames = {'heat_overall', 'incongruent', 'con_vs}; 
-
+DAT.contrasts = [1 0 0;
+                 0 1 0;
+                -1 1 0;
+                 0 0 1;
+                 1 1 0]; 
+            
+DAT.contrastnames = {'read_neutral','read_affect','read_affect_min_read_neutral' ...
+        'video_affect' 'read_overall'}; 
 
 DAT.contrastnames = format_strings_for_legend(DAT.contrastnames);
 

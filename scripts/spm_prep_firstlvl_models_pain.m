@@ -3,7 +3,7 @@
 cd(scriptsdir)
 DSGN = spm_get_firstlvl_dsgn_obj_painreg();
 
-maskTRs = 8;
+maskTRs = 0;
 
 %% extract model data, perform sanity check and save it
 for i = 1:length(DSGN.subjects) 

@@ -4,7 +4,7 @@
 
 % INPUTS
 % bids-formatted files (created in fenixfmri_bids.m)
-% files are already disdaqed (18 volumes removed)
+
 
 % OUTPUTS
 % final files are swdcr 
@@ -74,7 +74,7 @@ use_sbref = true;
 humanfmri_b5_motion_correction(preproc_subject_dir, use_st_corrected_data, use_sbref);
 % skipped creating .png files in qc_images (commented out canlab_preproc_show_montage, not crucial) 
 
-% B-6. distortion correction (FSL topup) (prepends dc) (~xx min per subject
+%% B-6. distortion correction (FSL topup) (prepends dc) (~xx min per subject)
 cd(scriptsdir)
 epi_enc_dir = 'ap';
 use_sbref = true;

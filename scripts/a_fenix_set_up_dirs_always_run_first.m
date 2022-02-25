@@ -16,11 +16,15 @@ figsavedir = fullfile(resultsdir, 'figures');
 roidir = fullfile(basedir, 'rois');
 maskdir = fullfile(basedir, 'masks');
 
+behdatadir =  '/Users/marta/Documents/DATA/FENIX/Behavior/'
+
 % matlab timing files for the ptt task
-timingspttdir = '/Users/marta/Documents/DATA/FENIX/Behavior/timings_ptt';
+timingspttdir = fullfile(behdatadir, 'timings_ptt');
 
 % psychopy timing files for the other tasks 
-timingspsychodir = '/Users/marta/Documents/DATA/FENIX/Behavior/timings_psychopy';
+timingspsychodir = fullfile(behdatadir,'timings_psychopy');
+
+cleanedraw = fullfile(behdatadir,'cleaned_psychopy');
 
 if ~exist(resultsdir, 'dir'), mkdir(resultsdir); end
 if ~exist(figsavedir, 'dir'), mkdir(figsavedir); end
