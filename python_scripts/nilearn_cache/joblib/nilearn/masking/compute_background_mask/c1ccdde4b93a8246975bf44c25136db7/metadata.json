@@ -1,1 +1,0 @@
-{"duration": 0.45201897621154785, "input_args": {"data_imgs": "'/Users/marta/nilearn_data/development_fmri/development_fmri/sub-pixar123_task-pixar_space-MNI152NLin2009cAsym_desc-preproc_bold.nii.gz'", "border_size": "2", "connected": "False", "opening": "False", "target_affine": "None", "target_shape": "None", "memory": "None"}}

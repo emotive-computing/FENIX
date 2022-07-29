@@ -30,7 +30,7 @@ for i = 1:length(DSGN.subjects)
             keyboard
         end
         
-        % warning, durations and onsetsw were switched: 
+        % warning, durations and onsets were switched: 
         tap_on.onset = {stim_dat.durations}; 
         tap_on.duration = {stim_dat.onsets};
         
@@ -48,7 +48,8 @@ for i = 1:length(DSGN.subjects)
         % do a sanity check on design info
         maxDesignTiming = max(tap_on.onset{1} + tap_on.duration{1})
             
-        %  ~ 142
+        %  ~ 142 for trials + 10 for last fixation ~ 150
+        
             
         % boldDuration = nii_hdr.tdim*DSGN.tr; = 149.96
         boldDuration = scn_num_volumes(nii_hdr.hname)*DSGN.tr

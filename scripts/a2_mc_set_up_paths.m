@@ -9,6 +9,19 @@
 % created a conda snake with python 3.5 env 
 %addpath('/Anaconda3/envs/snakes/bin');
 
+
+%% add BrainNet Viewer --- WORKS WITH ML 2020b BUT NOT WITH 2019a
+addpath(genpath('/Applications/BrainNet/'));
+
+%% add spm_ss (Fedorenko's single-subj functional localizer toolbox) 
+addpath(genpath('/Applications/CODE/FENIX/spm_ss'));
+
+%% add movcorr
+addpath(genpath('/Applications/CODE/movcorr'));
+
+%% add nirs toolbox
+addpath(genpath('/Applications/FNIRS/nirs-toolbox'));
+
 %% add repositories + help_examples
 % MAIN REPO
 addpath(genpath('/Applications/Canlab/CanlabCore/'));
@@ -27,6 +40,7 @@ addpath(genpath('/Applications/Canlab/CanlabPrivate/'));
 
 % Lukas 
 addpath(genpath('/Applications/Canlab/proj-emosymp/'));
+
 
 %% also add 
 % add Wani's core repo
@@ -49,15 +63,9 @@ addpath (genpath(masksdir))
 which ('gm_mask.nii');
 
 
-%% add modified scripts
-% 
-% modcanlabdir = fullfile(scriptsdir, 'modified_canlabcore_scripts');
-% addpath (genpath(modcanlabdir))
+%% save figs w/ .png using copy in /scripts
 
 which plugin_save_figure
-fprintf ('IT PROBABLY DOES NOT SAVE PNG SO ENFORCE BELOW \n');
-%edit plugin_save_figure.m
-f_ext='.png';
 
 %% for masked contrasts 
 %% add ROI masks 

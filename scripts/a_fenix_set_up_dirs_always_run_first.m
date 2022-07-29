@@ -8,6 +8,7 @@ basedir = '/Volumes/GoogleDrive/My Drive/B_FENIX/Analysis';
 
 % Scripts are in this github-connected dir: 
 scriptsdir = '/Applications/CODE/FENIX/scripts';
+scriptscorrdir = fullfile(scriptsdir, 'scriptscorr');
 
 datadir = '/Users/marta/Documents/DATA/FENIX/Imaging/';
 
@@ -26,9 +27,9 @@ timingspsychodir = fullfile(behdatadir,'timings_psychopy');
 
 cleanedraw = fullfile(behdatadir,'cleaned_psychopy');
 
-if ~exist(resultsdir, 'dir'), mkdir(resultsdir); end
-if ~exist(figsavedir, 'dir'), mkdir(figsavedir); end
-if ~exist(roidir, 'dir'), mkdir(roidir); end
+% if ~exist(resultsdir, 'dir'), mkdir(resultsdir); end
+% if ~exist(figsavedir, 'dir'), mkdir(figsavedir); end
+% if ~exist(roidir, 'dir'), mkdir(roidir); end
 
 addpath(scriptsdir);
 cd(scriptsdir); 
