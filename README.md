@@ -25,7 +25,7 @@ This repository contains FMRI, FNIRS and EEG code related to preprocessing and a
 ### FMRI & FNIRS Preprocessed Data 
 data and results are in Google Drive, currently available to those with Edit permissions (contact: marta.ceko@gmail.com):
 
-[Google Drive link to data](https://drive.google.com/drive/folders/1B3R5VZHeqQ3_KeJ1lweyBbLVNQeNnjrd?usp=sharing)
+[Google Drive link to data](https://drive.google.com/drive/folders/1LsLdkWb098rVNOOmpM-PlPb5Fmo0iHVn?usp=sharing)
 
 
 ### FMRI: Overview of scripts
