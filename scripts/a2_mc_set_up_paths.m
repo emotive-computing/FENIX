@@ -11,7 +11,7 @@
 
 
 %% add BrainNet Viewer --- WORKS WITH ML 2020b BUT NOT WITH 2019a
-addpath(genpath('/Applications/BrainNet/'));
+% addpath(genpath('/Applications/BrainNet/'));
 
 %% add spm_ss (Fedorenko's single-subj functional localizer toolbox) 
 addpath(genpath('/Applications/CODE/FENIX/spm_ss'));
@@ -20,7 +20,7 @@ addpath(genpath('/Applications/CODE/FENIX/spm_ss'));
 addpath(genpath('/Applications/CODE/movcorr'));
 
 %% add nirs toolbox
-addpath(genpath('/Applications/FNIRS/nirs-toolbox'));
+addpath(genpath('/Applications/CODE/nirs-toolbox'));
 
 %% add repositories + help_examples
 % MAIN REPO
@@ -30,16 +30,11 @@ addpath(genpath('/Applications/Canlab/CanlabCore/'));
 addpath(genpath('/Applications/Canlab/CANlab_help_examples/'));
 addpath(genpath('/Applications/Canlab/MasksPrivate/Masks_private'));
 addpath(genpath('/Applications/Canlab/Neuroimaging_Pattern_Masks'));
-addpath(genpath('/Applications/Canlab/MediationToolbox')); % for RB_empirical_bayes_params ...
-addpath(genpath('/Applications/Canlab/Canlab_MKDA_MetaAnalysis'));
 addpath(genpath('/Applications/Canlab/ROI_masks_and_parcellations')); % copied from Tor's shared Gdrive folder
 addpath(genpath('/Applications/Canlab/2017_kragel_mfc_generalizability_natneurosci/')); 
 addpath(genpath('/Applications/Canlab/RobustToolbox/'));
 addpath(genpath('/Applications/aal')); 
 addpath(genpath('/Applications/Canlab/CanlabPrivate/'));
-
-% Lukas 
-addpath(genpath('/Applications/Canlab/proj-emosymp/'));
 
 
 %% also add 
