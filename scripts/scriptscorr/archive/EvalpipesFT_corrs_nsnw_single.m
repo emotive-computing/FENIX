@@ -6,7 +6,7 @@ cd(scriptscorrdir)
 % preproc w/ fmriprep, not smoothed
 % high pass filter smoothed data - 180s = 0.005 Hz
 
-load(fullfile(basedir,'denoised/sub-F101_wdcr_cleaned_nw_hpf.mat'));
+load(fullfile(basedir,'denoised_fingertap/sub-F101_wdcr_cleaned_nw_hpf.mat'));
 
 % Extract dat_denoised signals from rois (created in prep_rois_fingertap.m))
 for i = 1:10

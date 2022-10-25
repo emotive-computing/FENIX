@@ -6,7 +6,7 @@ cd(scriptscorrdir)
 % preproc w/ fmriprep, not smoothed
 % high pass filter data - 180s = 0.005 Hz
 
-subj=filenames(fullfile(basedir,'denoised/sub-F*_wdcr_cleaned_nw_hpf.mat'));
+subj=filenames(fullfile(basedir,'denoised_fingertap/sub-F*_wdcr_cleaned_nw_hpf.mat'));
 %load(fullfile(basedir,'denoised/sub-F101_wdcr_cleaned_nw_hpf.mat'));
 
 clear FT_roi*

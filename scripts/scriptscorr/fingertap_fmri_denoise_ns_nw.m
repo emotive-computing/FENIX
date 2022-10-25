@@ -3,16 +3,11 @@
 % high pass filter smoothed data - 180s = 0.005 Hz
 % remove ventricles and WM signal (vw) using canonical masks 
 
-
-% find preprocessed data files
-preprocdir = '/Users/marta/Documents/DATA/FENIX/Imaging/preprocessed'
-datadir = preprocdir
-
-outdir = fullfile(basedir, 'denoised'); % '/Users/marta/Documents/B_VRP/Analysis_FMRI/results'
+outdir = fullfile(basedir, 'denoised_fingertap'); % '/Users/marta/Documents/B_VRP/Analysis_FMRI/results'
 repodir = '/Applications/Canlab/OLP4CBP';
 
 
-imgs = filenames(fullfile(datadir, 'sub-*', 'func', 'wdcr*02_bold*.nii'), 'char'); 
+imgs = filenames(fullfile(preprocdir, 'sub-*', 'func', 'wdcr*02_bold*.nii'), 'char'); 
 subjn = size(imgs,1); % N = 10 
 
 %

@@ -12,28 +12,19 @@ cd(scriptscorrdir)
 
 %% Identify ROIs
 
-%
-roi1_stroop = [4 20 38];   % ACC 
+roi1_stroop = [4 22 38];  % ACC 
 roi2_stroop = [-40 6 32]; % L DLPFC1
 roi3_stroop = [-42 20 28]; % L DLPFC2
-roi4_stroop = [44 13 36];  % R DLPFC 
-roi4_stroop = [30 -56 48]
+roi4_stroop = [40 8 32];  % R DLPFC 
+roi5_stroop = [-30 -56 48]; % L SPL
+roi6_stroop = [30 -56 48]; % R SPL
 
-% S1M1 
-roi2_ns_smr = [36 -24 54];
-roi3_ns_sml = [-36 -24 54];
-
-% control 
-roi6_stroop_ns_mtg = [-58 -32 -8];
-
-
-% roi1_to_6
-rois = [-4 -6 56
-    36 -24 54
-    -36 -24 54
-    2 50 18
-    2 -58 46
-    -58 -32 -8];
+rois = [4 22 38 
+    -40 6 32 
+    -42 20 28 
+    40 8 32  
+    -30 -56 48 
+    30 -56 48];
 
 %% Create ROI masks
 
@@ -49,7 +40,7 @@ for i = 1:size(rois,1)
     
     % save back into img, view to confirm, and write it to file
     dat.dat = indx; %orthviews(dat)
-    write(dat, 'fname', sprintf('EvalFT_6mmroi%d.nii',i),'overwrite')
+    write(dat, 'fname', sprintf('Stroop_6mmroi%d.nii',i),'overwrite')
 end
 
 % 10 mm radius
@@ -61,7 +52,7 @@ for i = 1:size(rois,1)
     
     % save back into img, view to confirm, and write it to file
     dat.dat = indx; %orthviews(dat)
-    write(dat, 'fname', sprintf('EvalFT_10mmroi%d.nii',i),'overwrite')
+    write(dat, 'fname', sprintf('Stroop_10mmroi%d.nii',i),'overwrite')
 end
 
 % 14 mm radius
@@ -73,7 +64,7 @@ for i = 1:size(rois,1)
     
     % save back into img, view to confirm, and write it to file
     dat.dat = indx; %orthviews(dat)
-    write(dat, 'fname', sprintf('EvalFT_14mmroi%d.nii',i),'overwrite')
+    write(dat, 'fname', sprintf('Stroop_14mmroi%d.nii',i),'overwrite')
 end
 
 % 18 mm radius
@@ -85,8 +76,8 @@ for i = 1:size(rois,1)
     
     % save back into img, view to confirm, and write it to file
     dat.dat = indx; orthviews(dat)
-    write(dat, 'fname', sprintf('EvalFT_18mmroi%d.nii',i),'overwrite')
+    write(dat, 'fname', sprintf('Stroop_18mmroi%d.nii',i),'overwrite')
 end
 
 
-
+! mv Stroop*mm* rois

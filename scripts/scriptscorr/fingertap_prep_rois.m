@@ -86,5 +86,5 @@ for i = 1:size(rois,1)
     write(dat, 'fname', sprintf('EvalFT_18mmroi%d.nii',i),'overwrite')
 end
 
-
+! mv EvalFT*mm* rois
 

@@ -11,14 +11,15 @@ scriptsdir = '/Applications/CODE/FENIX/scripts';
 scriptscorrdir = fullfile(scriptsdir, 'scriptscorr');
 
 %datadir = '/Users/marta/Documents/DATA/FENIX/Imaging/';
-datadir = '/Users/mace2098/Documents/DATA/FENIX/Imaging/';
+datadir = '/Volumes/GoogleDrive/My Drive/B_FENIX/Imaging';
 
 resultsdir = fullfile(basedir, 'results');
 figsavedir = fullfile(resultsdir, 'figures');
 roidir = fullfile(basedir, 'rois');
 maskdir = fullfile(basedir, 'masks');
+preprocdir = fullfile (datadir, 'preprocessed')
 
-behdatadir =  '/Users/mace2098/Documents/DATA/FENIX/Behavior/'
+behdatadir =  '/Volumes/GoogleDrive/My Drive/B_FENIX/Behavior/'
 
 % matlab timing files for the ptt task
 timingspttdir = fullfile(behdatadir, 'timings_ptt');
