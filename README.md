@@ -28,6 +28,10 @@ data and results are in Google Drive, currently available to those with Edit per
 [Google Drive link to data](https://drive.google.com/drive/folders/1LsLdkWb098rVNOOmpM-PlPb5Fmo0iHVn?usp=sharing)
 
 
+### FMRI & FNIRS correlations 
+- in scripts/scriptscorr
+
+
 ### FMRI: Overview of scripts
 
 (1) BIDS formatting: fenixfmri_bids.m 
@@ -46,7 +50,7 @@ data and results are in Google Drive, currently available to those with Edit per
 - spm_prep_firstlvl_models_[taskname].m
 - spm_fit_firstlvl_models_[taskname].m
 
-(3) GLM: Second level (= group-level) 
+(4) GLM: Second level (= group-level) 
 
 - prep_1_[taskname]_set_conditions_contrasts_colors.m
 - then run prep_2_, prep_3_, c_univariate_contrast_maps (canlab core scripts) 
