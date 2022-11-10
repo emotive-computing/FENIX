@@ -3,7 +3,8 @@
 
 %  ROI selection based on Neurosynth = independent ROIs
 
-%  - corresponding to Neurosynth term 'stroop
+%  - 5 ROIs corresponding to Neurosynth term 'stroop'
+%  - 2 ROIs as control 
 
 % prep spheres of different radii
 % 6, 10, 14, 18 mm
@@ -12,19 +13,24 @@ cd(scriptscorrdir)
 
 %% Identify ROIs
 
-roi1_stroop = [4 22 38];  % ACC 
+roi1_stroop = [4 22 38];  % ACC / SMA
 roi2_stroop = [-40 6 32]; % L DLPFC1
-roi3_stroop = [-42 20 28]; % L DLPFC2
-roi4_stroop = [40 8 32];  % R DLPFC 
-roi5_stroop = [-30 -56 48]; % L SPL
-roi6_stroop = [30 -56 48]; % R SPL
+roi3_stroop = [44 12 34];  % R DLPFC 
+roi4_stroop = [-30 -56 48]; % L SPL
+roi5_stroop = [30 -56 48]; % R SPL 
+
+% control
+roi6_stroop = [-54 4 -14]; % L temporal pole 
+roi7_stroop = [14 -84 30]; % R cuneus
+
 
 rois = [4 22 38 
     -40 6 32 
-    -42 20 28 
-    40 8 32  
+    44 12 34 
     -30 -56 48 
-    30 -56 48];
+    30 -56 48
+    -54 4 -14
+    14 -84 30];
 
 %% Create ROI masks
 
