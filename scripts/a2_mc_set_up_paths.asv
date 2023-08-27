@@ -84,8 +84,7 @@ addpath('/Applications/spm12/')
 fprintf ('To confirm, which spm am I running? \n');
 which spm
 
-% If running 1st levels, for whichever spm I am using: 
-% make sure CanlabCore/GLM_Batch_tools/CANLab_spm_toolbox is in spm12/toolbox 
+% MAKE SURE CanlabCore/GLM_Batch_tools/CANLab_spm_toolbox to /dartfs-hpc/rc/home/m/f0042vm/software/spm12_without_canlab/toolbox 
 
 %% add TPM map for normalization 
 addpath /Applications/spm12/tpm/    

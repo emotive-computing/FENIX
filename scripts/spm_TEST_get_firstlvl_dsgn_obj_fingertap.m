@@ -6,15 +6,15 @@ function DSGN = get_firstlvl_dsgn_obj_fingertap()
     
     % INPUT DATA ---------------------------------------------------------- %
     DSGN.metadata = "FENIX fingertap: GLM first level analysis";
-    DSGN.modeldir = '/Users/mace2098/DATA/FENIX/Imaging/firstlvl/fingertap'; % dir to store firslvl results
+    DSGN.modeldir = '/Users/mace2098/DATA/FENIX/Imaging_test/firstlvl/fingertap'; % dir to store firslvl results
 
-    DSGN.funcnames = {'func/sw*fingertap*.nii'}; % smoothed preproc files
+    DSGN.funcnames = {'func/w*fingertap*.nii'}; % smoothed preproc files
     DSGN.subjects = {};
-    fnames = dir('/Users/mace2098/DATA/FENIX/Imaging/preprocessed/sub*'); % get subject names w/ subject data 
+    fnames = dir('/Users/mace2098/DATA/FENIX/Imaging_test/preprocessed/sub*'); % get subject names w/ subject data 
     
     for i = 1:length(fnames)
         this_f = fnames(i);
-        runs = dir([this_f.folder, '/', this_f.name, '/func/sw*fingertap*.nii']);
+        runs = dir([this_f.folder, '/', this_f.name, '/func/w*fingertap*.nii']);
         DSGN.subjects = [DSGN.subjects, [this_f.folder, '/', this_f.name]]; % cell array of subject directories (absolute paths)
     end
     

@@ -7,7 +7,7 @@
 % basedir = '/Volumes/GoogleDrive/My Drive/B_FENIX/Analysis'; % can't find that one anymore
 % basedir = '/Users/mace2098/Library/CloudStorage/GoogleDrive-mace2098@colorado.edu/My Drive/B_FENIX';
 basedir = '/Users/mace2098/Library/CloudStorage/OneDrive-UCB-O365/B_FENIX'
-resultsdir = fullfile(basedir, 'Analysis/results_pain/');
+resultsdir = fullfile(basedir, 'results');
 figsavedir = fullfile(resultsdir, 'figures');
 
 % SCRIPTS 
@@ -17,9 +17,9 @@ scriptscorrdir = fullfile(scriptsdir, 'scriptscorr');
 
 % DATA 
 % firstlevels 
-datadir =  fullfile(basedir, 'Analysis/');
+datadir =  fullfile(basedir, 'Ana');
 % preprocessed data 
-preprocdir = '/Users/mace2098/DATA/FENIX/Imaging/preprocessed';
+preprocdir = '/Users/mace2098/DATA/FENIX/Imaging/preprocessed');
 behdatadir =  '/Users/mace2098/DATA/FENIX/Behavior/';
 
 % matlab timing files for the ptt task

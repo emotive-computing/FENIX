@@ -66,11 +66,11 @@ DAT.contrasts = [1 1 1 1 1 1;
                  1 1 0 0 0 0;
                  0 0 1 1 0 0;
                  0 0 0 0 1 1;
-                 1 1 1 1 0 0]; 
+                 0 0 1 1 1 1]; 
 
 DAT.contrastnames = {'heat_overall', 'heat_2_vs_1', ...
         'heat_up_vs_neut', 'heat_down_vs_neut', 'heat_up_vs_down' ...
-        'heat_up', 'heat_neut', 'heat_down', 'heat_up_neut'}; 
+        'heat_up', 'heat_neut', 'heat_down', 'heat_neut_down'}; 
 
 
 DAT.contrastnames = format_strings_for_legend(DAT.contrastnames);

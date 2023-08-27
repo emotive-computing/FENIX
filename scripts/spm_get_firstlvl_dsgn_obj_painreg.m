@@ -1,16 +1,16 @@
 
 % this file returns first level DSGN objects (see
 % canlab_glm_single_subject('dsgninfo') for details on object properties)
-% for QC of paingen prodicaine and control scans
+
 function DSGN = get_firstlvl_dsgn_obj_painreg()
     
     % INPUT DATA ---------------------------------------------------------- %
     DSGN.metadata = "FENIX painreg: GLM first level analysis";
-    DSGN.modeldir = '/Users/marta/Documents/DATA/FENIX/Imaging/firstlvl/painreg'; % dir to store firslvl results
+    DSGN.modeldir = '/Users/mace2098/DATA/FENIX/Imaging/firstlvl/painreg'; % dir to store firslvl results
     
     DSGN.funcnames = {'func/sw*painreg*.nii'}; % smoothed preproc files
     DSGN.subjects = {};
-    fnames = dir('/Users/marta/Documents/DATA/FENIX/Imaging/preprocessed/sub*'); % get subject names w/ subject data 
+    fnames = dir('/Users/mace2098/DATA/FENIX/Imaging/preprocessed/sub*'); % get subject names w/ subject data 
     
     for i = 1:length(fnames)
         this_f = fnames(i);

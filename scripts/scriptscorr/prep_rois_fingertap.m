@@ -1,10 +1,13 @@
  
-%% prep rois 
+%% prep task rois 
 
 %  ROI selection based on Neurosynth = independent ROIs
 
-%  - 5 ROIs corresponding to Neurosynth term 'finger tapping'
-%  - 2 ROIs as control -
+%  FT: midSMA, Left S1M1, Right S1M1 
+
+% STROOP: dACC, Left S1M1, Right S1M1, Left dLPFC
+
+% PAIN: dACC, Left S1M1, Right S1M1, Left S2, Right S2
 
 % prep spheres of different radii
 % 6, 10, 14, 18 mm
@@ -13,30 +16,28 @@ cd(scriptscorrdir)
 
 %% Identify ROIs - peak MNI coords ns association test 
 
-roi1_ns_sma = [-4 -6 56];  % SMA
-roi2_ns_sm = [38 -20 52]; % R S1M1
-roi3_ns_sm = [-36 -24 54]; % L S1M1
-roi4_ns_dlpfc = [-58 2 32]; % L DLPFC 
-roi5_ns_dlpfc = [56 26 40]; % R DLPFC 
-
-% Control 
-roi6_ns_pmtg = [-52 -40 2]; % L posterior MTG
-roi7_ns_mpfc = [2 62 0]; % mpfc
-
+roi1_SMA = [-4 -6 56];  % SMA
+roi2_LS1M1 = [-36 -24 54]; % L S1M1
+roi3_RS1M1 = [38 -20 52]; % R S1M1
+roi4_dACC = [4 22 36] % ACC 
+roi5_LDLPFC = [-58 2 32]; % L DLPFC 
+roi6_LS2 = [-58 -22 20]; 
+roi7_RS2 = [60 -22 20];
 
 % roi1_to_7
-rois= [-4 -6 56
-    38 -20 52
-    -36 -24 54
-    -58 2 32
-    56 26 40
-    -52 -40 2 
-    2 62 0];
+rois = [-4 -6 56  % SMA
+        -36 -24 54 % L S1M1
+        38 -20 52 % R S1M1
+        4 22 36 % ACC 
+        -58 2 32 % L DLPFC 
+        -58 -22 20 
+        60 -22 20];
+
 
 %% Create ROI masks
 
 % load any img in MNI space -- doesn't matter which
-img = which('gray_matter_mask.img'); 
+img = which('gray_matter_for_roi.img'); 
 
 % 6 mm radius
 for i = 1:size(rois,1)
@@ -47,7 +48,7 @@ for i = 1:size(rois,1)
     
     % save back into img, view to confirm, and write it to file
     dat.dat = indx; %orthviews(dat)
-    write(dat, 'fname', sprintf('FT_6mmroi%d.nii',i),'overwrite')
+    write(dat, 'fname', sprintf('Task_6mmroi%d.nii',i),'overwrite')
 end
 
 % 10 mm radius
@@ -59,7 +60,7 @@ for i = 1:size(rois,1)
     
     % save back into img, view to confirm, and write it to file
     dat.dat = indx; %orthviews(dat)
-    write(dat, 'fname', sprintf('FT_10mmroi%d.nii',i),'overwrite')
+    write(dat, 'fname', sprintf('Task_10mmroi%d.nii',i),'overwrite')
 end
 
 % 14 mm radius
@@ -71,7 +72,7 @@ for i = 1:size(rois,1)
     
     % save back into img, view to confirm, and write it to file
     dat.dat = indx; %orthviews(dat)
-    write(dat, 'fname', sprintf('FT_14mmroi%d.nii',i),'overwrite')
+    write(dat, 'fname', sprintf('Task_14mmroi%d.nii',i),'overwrite')
 end
 
 % 18 mm radius
@@ -82,9 +83,9 @@ for i = 1:size(rois,1)
     indx = iimg_xyz2spheres(mm2voxel(rois(i,:),dat.volInfo),dat.volInfo.xyzlist,9);
     
     % save back into img, view to confirm, and write it to file
-    dat.dat = indx; orthviews(dat)
-    write(dat, 'fname', sprintf('FT_18mmroi%d.nii',i),'overwrite')
+    dat.dat = indx; &orthviews(dat)
+    write(dat, 'fname', sprintf('Task_18mmroi%d.nii',i),'overwrite')
 end
 
-! mv FT*mm* rois
+! mv Task*mm* rois
 
